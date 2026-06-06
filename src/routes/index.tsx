@@ -1,29 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { OpeningSequence } from "@/components/wedding/OpeningSequence";
+import { Hero } from "@/components/wedding/Hero";
+import { WeddingDetails } from "@/components/wedding/WeddingDetails";
+import { Nav } from "@/components/wedding/Nav";
+import { Footer } from "@/components/wedding/Footer";
+import { MusicToggle } from "@/components/wedding/MusicToggle";
+import { useLenis } from "@/hooks/useLenis";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Oitis & Meave — A Celebration of Love, Tradition & Forever" },
+      {
+        name: "description",
+        content:
+          "An invitation to the wedding of Oitis & Meave — three days of music, ceremony and celebration under a midnight sky of gold.",
+      },
+      { property: "og:title", content: "Oitis & Meave — Wedding Invitation" },
+      { property: "og:description", content: "A celebration of love, tradition & forever." },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  useLenis();
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
+      <Nav />
+      <OpeningSequence />
+      <Hero />
+      <WeddingDetails />
+      <Footer />
+      <MusicToggle />
+    </main>
   );
 }
