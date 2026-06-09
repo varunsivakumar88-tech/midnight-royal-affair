@@ -12,6 +12,10 @@ export function Nav() {
   const links = [
     { href: "#hero", label: "Home" },
     { href: "#details", label: "Details" },
+    { href: "#venues", label: "Venues" },
+    { href: "#gallery", label: "Gallery" },
+    { href: "#blessings", label: "Blessings" },
+    { href: "#faq", label: "FAQ" },
   ];
 
   return (
